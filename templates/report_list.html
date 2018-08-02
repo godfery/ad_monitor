@@ -1,0 +1,46 @@
+{% extends 'base_layout.html' %}
+{% import 'page.html' as pg %}
+{% block css %}
+<style>
+    .table td,.table th
+    {
+        vertical-align:middle;
+    }
+</style>
+{% endblock %}
+{% block page_content %}
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>uid</th>
+        <th>extra</th>
+        
+        
+        <th>发布时间</th>
+        
+    </tr>
+    </thead>
+    {% for v in page_data.items %}
+    <tr>
+        <td>{{ v.id}}</td>
+        <td>{{ v.uid}}</td>
+        <td>{{ v.extra}}</td>
+        <td>{{ v.add_time |dateformat("%Y-%m-%d %H:%M:%S") }}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+{{ pg.page(page_data,'cat_list') }}
+{% endblock %}
+
+
+{% block js %}
+<script>
+    $(document).ready(function()
+    {
+        $("#m4").addClass("active");
+    });
+</script>
+{%  endblock %}
