@@ -5,6 +5,10 @@ __pycache__/
 *.DS_Store
 # C extensions
 *.so
+*.log
+*.pid
+*.txt
+
 
 # Distribution / packaging
 .Python
